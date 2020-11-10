@@ -1,0 +1,17 @@
+{
+  "name": "kooboo_spa",
+  "version": "1.0.0",
+  "description": "Kooboo spa tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./index.js -s https://www.aaa.com -u huanent -p 123"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^6.2.0",
+    "form-data": "^3.0.0",
+    "zip-a-folder": "0.0.12"
+  }
+}
