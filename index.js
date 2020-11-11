@@ -13,13 +13,12 @@ program.on("--help", () => {
   console.log("");
   console.log("Example call:");
   console.log(
-    "  $ kooboo-spa -h www.kooboo.cn -s guid -u admin -p 123 -d ./dist"
+    "  $ kooboo-spa -h mysite.kooboo.cn -u admin -p 123 -d ./dist"
   );
 });
 
 program
   .requiredOption("-h, --host <host>")
-  .requiredOption("-s, --site <site>")
   .requiredOption("-u, --user <user>")
   .requiredOption("-p, --password <password>")
   .requiredOption("-d, --dir [dir]", "build output dir", "./dist")
@@ -53,12 +52,11 @@ function zip(dir, callback) {
 function publish(options, callback) {
   let form = new FormData();
   form.append("zipfile", fs.createReadStream(zipName));
-  const auth = options.user + ":" + options.password;
 
   form.submit(
     {
       host: options.host,
-      path: `/_api/receiver/zip?SiteId=${options.site}`,
+      path: `/_api/receiver/zip`,
       auth: options.user + ":" + options.password,
     },
     (err, res) => {

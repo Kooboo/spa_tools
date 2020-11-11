@@ -1,6 +1,6 @@
 {
   "name": "kooboo_spa",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Kooboo spa tools",
   "repository": {
     "type": "git",
@@ -9,7 +9,7 @@
   "homepage": "https://github.com/Kooboo/spa_tools",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js -h 192.168.0.101 -s 6657ba57-6680-f472-f49a-14f80f7ffce2 -u huanent -p xxx"
+    "test": "node index.js -h qqqq.localkooboo.com -u huanent -p xxx"
   },
   "keywords": [],
   "author": "",
