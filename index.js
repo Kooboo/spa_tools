@@ -12,9 +12,7 @@ program.version("1.0.0");
 program.on("--help", () => {
   console.log("");
   console.log("Example call:");
-  console.log(
-    "  $ kooboo-spa -h mysite.kooboo.cn -u admin -p 123 -d ./dist"
-  );
+  console.log("  $ kooboo-spa -h mysite.kooboo.cn -u admin -p 123 -d ./dist");
 });
 
 program
@@ -56,14 +54,14 @@ function publish(options, callback) {
   form.submit(
     {
       host: options.host,
-      path: `/_api/receiver/zip`,
+      path: `/_api/receiver/zip?isSpa=true`,
       auth: options.user + ":" + options.password,
     },
     (err, res) => {
       if (err) {
         fs.unlinkSync(zipName);
         console.log(err);
-        return
+        return;
       }
 
       let data = "";
