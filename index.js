@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const { Command } = require("commander");
 const zipFolder = require("zip-a-folder");
 const fs = require("fs");
@@ -11,7 +13,7 @@ program.on("--help", () => {
   console.log("");
   console.log("Example call:");
   console.log(
-    "  $ kooboo_spa -h www.kooboo.cn -s guid -u admin -p 123 -d ./dist"
+    "  $ kooboo-spa -h www.kooboo.cn -s guid -u admin -p 123 -d ./dist"
   );
 });
 

@@ -1,11 +1,15 @@
 {
   "name": "kooboo_spa",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Kooboo spa tools",
-  "repository": "https://github.com/Kooboo/spa_tools",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kooboo/spa_tools.git"
+  },
+  "homepage": "https://github.com/Kooboo/spa_tools",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js -h www.kooboo.cn -s 6657ba57-6680-f472-f49a-14f80f7ffce2 -u huanent -p xxx"
+    "test": "node index.js -h www.kooboo.cn -s 6657ba57-6680-f472-f49a-14f80f7ffce2 -u huanent -p xxx -d ./ddd"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +18,8 @@
     "commander": "^6.2.0",
     "form-data": "^3.0.0",
     "zip-a-folder": "0.0.12"
+  },
+  "bin": {
+    "kooboo-spa": "./index.js"
   }
 }
