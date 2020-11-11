@@ -61,11 +61,23 @@ function publish(options, callback) {
       path: `/_api/receiver/zip?SiteId=${options.site}`,
       auth: options.user + ":" + options.password,
     },
-    (err) => {
+    (err, res) => {
       if (err) {
         fs.unlinkSync(zipName);
         console.log(err);
-      } else callback();
+        return
+      }
+
+      let data = "";
+      res.on("data", (e) => (data += e));
+
+      res.on("end", () => {
+        let response = JSON.parse(data);
+        if (!response.success) {
+          fs.unlinkSync(zipName);
+          console.log(err, response.messages);
+        } else callback();
+      });
     }
   );
 }
