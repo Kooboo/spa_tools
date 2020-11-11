@@ -2,9 +2,10 @@
   "name": "kooboo_spa",
   "version": "1.0.0",
   "description": "Kooboo spa tools",
+  "repository": "https://github.com/Kooboo/spa_tools",
   "main": "index.js",
   "scripts": {
-    "test": "node ./index.js -s https://www.aaa.com -u huanent -p 123"
+    "test": "node index.js -h www.kooboo.cn -s 6657ba57-6680-f472-f49a-14f80f7ffce2 -u huanent -p xxx"
   },
   "keywords": [],
   "author": "",
