@@ -12,7 +12,7 @@ program.version("1.0.0");
 program.on("--help", () => {
   console.log("");
   console.log("Example call:");
-  console.log("  $ kooboo-spa -h mysite.kooboo.cn -u admin -p 123 -d ./dist");
+  console.log("  $ kooboo-spa -h http://mysite.kooboo.cn -u admin -p 123 -d ./dist");
 });
 
 program
@@ -50,10 +50,13 @@ function zip(dir, callback) {
 function publish(options, callback) {
   let form = new FormData();
   form.append("zipfile", fs.createReadStream(zipName));
+  var url=new URL(options.host);
 
   form.submit(
     {
-      host: options.host,
+      host: url.hostname,
+      port:url.port,
+      protocol:url.protocol,
       path: `/_api/receiver/zip?isSpa=true`,
       auth: options.user + ":" + options.password,
     },
