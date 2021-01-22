@@ -34,6 +34,6 @@ package.json
  "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "publish":"vue-cli-service build && kooboo-spa -h http://mysite.kooboo.site -u admin -p xxx"
+    "publish":"vue-cli-service build && kooboo-spa -h mysite.kooboo.site -u admin -p xxx"
   },
 ```
